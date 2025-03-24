@@ -29,7 +29,7 @@ export class UserTasksComponent implements OnInit {
 
     this.destroyRef.onDestroy(() => subscription.unsubscribe());
   }
-}
+};
 
 export const resolveUserName: ResolveFn<string> = (
   activatedRoute: ActivatedRouteSnapshot, 
@@ -39,4 +39,4 @@ export const resolveUserName: ResolveFn<string> = (
     const userName = usersService.users.find(u => u.id === uid)?.name || '';
 
     return userName;
-}
+};
