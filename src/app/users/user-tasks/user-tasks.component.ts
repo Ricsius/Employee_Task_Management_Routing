@@ -24,6 +24,10 @@ export class UserTasksComponent implements OnInit {
     console.log(this.activatedRoute.snapshot);
     console.log('Static message');
     console.log(this.message());
+
+    const subscription = this.activatedRoute.data.subscribe((data) => console.log(data));
+
+    this.destroyRef.onDestroy(() => subscription.unsubscribe());
   }
 }
 
